@@ -20,7 +20,16 @@
   <body>
     <h1>Social Data Analysis and Visualisation 2017 </br>
     Project B</h1>
-    <h2>Visualizing fire and other incidents per year (2003 - 2017)</h2> 
+    <h2>Visualizing fire and other incidents per year (2003 - 2017)</h2>
+    Here you see incidents for the San Francisco fire deparment (medical incidents excluded). <br>
+    The horizontal axis shows the number of fire incidents while the vertical axis shows any other incidents. <br><br>
+
+    The of total of both fire and other incidents is further indicated by the size of the circle <br>
+    and each circle is labelled after the neighborhood or district it represents. <br>
+    Some labels may unfortunately be a bit hard to read if they overlap. <br><br>
+
+    There is data from 2003 to 2017 and you can switch years using the two buttons below. <br>
+    2017 data will look like there are fewer incidents, but that is because there is only data up to may 2017. <br>
 
     <div id="incidentPlot">
       <script type="text/javascript">
@@ -197,7 +206,20 @@
     </div>
   
     <h2> Visualising Geodata </h2>
-    <p>Please allow a moment for the calculations to complete (should be less than 10 seconds).</p>
+    Here is shown how the fire department incidents are distributed in location across San Franciso. <br>
+    To illustrate where the center of points are, there are some circles larger than the rest with a yellow outline <br>
+    indicating the center of points of the same color. <br><br>
+
+    If you want to see more or less centers, use the Increase/Decrease K buttons. <br>
+    Note that the minimum is 2 (default) and maximum is 6.<br><br>
+
+    Similarly, the year can also be changed usind the Increase/Decrease year buttons.<br>
+    And finally you can switch between fire and other incidents using toggle incident type button.<br><br>
+
+    The Presidio neighborhood appears to be in the water, but looking at google maps, there is indeed land there.<br>
+    It appears the data used to display the frame of San Francisco does not include this area.<br><br>
+
+    <b>Please allow a moment for the calculations to complete</b> (should be less than 10 seconds). <br>
 
     <div id="kmeansPlot">
       <script type="text/javascript">
