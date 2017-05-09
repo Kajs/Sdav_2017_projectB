@@ -1,0 +1,616 @@
+Neighborhood  District,Year,Fire Incidents,Other Incidents
+Portola,2016,22,283
+Portola,2017,8,110
+Portola,2003,39,164
+Portola,2006,19,122
+Portola,2007,29,177
+Portola,2004,39,165
+Portola,2005,31,117
+Portola,2015,35,245
+Portola,2014,30,186
+Portola,2008,34,205
+Portola,2009,29,182
+Portola,2011,23,215
+Portola,2010,18,192
+Portola,2013,31,189
+Portola,2012,25,184
+Japantown,2016,19,203
+Japantown,2017,7,64
+Japantown,2003,15,173
+Japantown,2006,16,166
+Japantown,2007,27,124
+Japantown,2004,20,167
+Japantown,2005,13,158
+Japantown,2015,23,184
+Japantown,2014,21,177
+Japantown,2008,17,139
+Japantown,2009,28,135
+Japantown,2011,23,129
+Japantown,2010,20,165
+Japantown,2013,14,139
+Japantown,2012,20,128
+Glen Park,2016,27,190
+Glen Park,2017,3,59
+Glen Park,2003,17,91
+Glen Park,2006,8,111
+Glen Park,2007,19,115
+Glen Park,2004,10,76
+Glen Park,2005,17,99
+Glen Park,2015,15,167
+Glen Park,2014,16,126
+Glen Park,2008,13,105
+Glen Park,2009,15,112
+Glen Park,2011,24,99
+Glen Park,2010,18,118
+Glen Park,2013,9,133
+Glen Park,2012,19,130
+Western Addition,2016,170,1082
+Western Addition,2017,38,292
+Western Addition,2003,228,1186
+Western Addition,2006,127,780
+Western Addition,2007,171,811
+Western Addition,2004,212,1143
+Western Addition,2005,137,1057
+Western Addition,2015,132,1055
+Western Addition,2014,136,918
+Western Addition,2008,176,845
+Western Addition,2009,242,880
+Western Addition,2011,175,923
+Western Addition,2010,196,862
+Western Addition,2013,151,937
+Western Addition,2012,140,914
+Outer Richmond,2016,81,717
+Outer Richmond,2017,16,248
+Outer Richmond,2003,47,337
+Outer Richmond,2006,49,268
+Outer Richmond,2007,44,264
+Outer Richmond,2004,52,272
+Outer Richmond,2005,37,295
+Outer Richmond,2015,90,707
+Outer Richmond,2014,68,515
+Outer Richmond,2008,50,340
+Outer Richmond,2009,34,356
+Outer Richmond,2011,55,443
+Outer Richmond,2010,33,308
+Outer Richmond,2013,51,366
+Outer Richmond,2012,39,366
+Inner Sunset,2016,53,482
+Inner Sunset,2017,25,172
+Inner Sunset,2003,30,273
+Inner Sunset,2006,29,258
+Inner Sunset,2007,30,260
+Inner Sunset,2004,40,273
+Inner Sunset,2005,40,263
+Inner Sunset,2015,63,483
+Inner Sunset,2014,56,412
+Inner Sunset,2008,31,276
+Inner Sunset,2009,41,319
+Inner Sunset,2011,38,325
+Inner Sunset,2010,45,321
+Inner Sunset,2013,48,352
+Inner Sunset,2012,35,326
+Financial District/South Beach,2016,220,2443
+Financial District/South Beach,2017,72,701
+Financial District/South Beach,2003,218,2520
+Financial District/South Beach,2006,212,1871
+Financial District/South Beach,2007,234,2073
+Financial District/South Beach,2004,182,1909
+Financial District/South Beach,2005,217,1886
+Financial District/South Beach,2015,237,2343
+Financial District/South Beach,2014,200,2189
+Financial District/South Beach,2008,202,1898
+Financial District/South Beach,2009,209,1959
+Financial District/South Beach,2011,208,2076
+Financial District/South Beach,2010,213,2129
+Financial District/South Beach,2013,218,2224
+Financial District/South Beach,2012,214,2397
+Oceanview/Merced/Ingleside,2016,42,428
+Oceanview/Merced/Ingleside,2017,14,103
+Oceanview/Merced/Ingleside,2003,39,372
+Oceanview/Merced/Ingleside,2006,36,242
+Oceanview/Merced/Ingleside,2007,30,231
+Oceanview/Merced/Ingleside,2004,42,344
+Oceanview/Merced/Ingleside,2005,32,216
+Oceanview/Merced/Ingleside,2015,43,371
+Oceanview/Merced/Ingleside,2014,34,302
+Oceanview/Merced/Ingleside,2008,29,228
+Oceanview/Merced/Ingleside,2009,30,257
+Oceanview/Merced/Ingleside,2011,30,288
+Oceanview/Merced/Ingleside,2010,27,236
+Oceanview/Merced/Ingleside,2013,29,256
+Oceanview/Merced/Ingleside,2012,33,256
+Presidio Heights,2016,15,258
+Presidio Heights,2017,4,114
+Presidio Heights,2003,36,267
+Presidio Heights,2006,23,181
+Presidio Heights,2007,38,234
+Presidio Heights,2004,22,234
+Presidio Heights,2005,21,222
+Presidio Heights,2015,17,305
+Presidio Heights,2014,21,237
+Presidio Heights,2008,32,197
+Presidio Heights,2009,25,174
+Presidio Heights,2011,25,207
+Presidio Heights,2010,29,197
+Presidio Heights,2013,26,180
+Presidio Heights,2012,10,191
+Bernal Heights,2016,96,478
+Bernal Heights,2017,25,165
+Bernal Heights,2003,84,515
+Bernal Heights,2006,75,398
+Bernal Heights,2007,55,401
+Bernal Heights,2004,72,465
+Bernal Heights,2005,79,384
+Bernal Heights,2015,70,522
+Bernal Heights,2014,43,366
+Bernal Heights,2008,45,399
+Bernal Heights,2009,43,377
+Bernal Heights,2011,53,340
+Bernal Heights,2010,49,390
+Bernal Heights,2013,39,300
+Bernal Heights,2012,47,376
+Golden Gate Park,2016,73,239
+Golden Gate Park,2017,6,77
+Golden Gate Park,2003,39,164
+Golden Gate Park,2006,43,121
+Golden Gate Park,2007,48,177
+Golden Gate Park,2004,35,148
+Golden Gate Park,2005,49,136
+Golden Gate Park,2015,91,275
+Golden Gate Park,2014,46,209
+Golden Gate Park,2008,33,201
+Golden Gate Park,2009,35,225
+Golden Gate Park,2011,28,206
+Golden Gate Park,2010,33,253
+Golden Gate Park,2013,42,178
+Golden Gate Park,2012,35,218
+South of Market,2016,206,2192
+South of Market,2017,70,638
+South of Market,2003,243,1744
+South of Market,2006,266,1583
+South of Market,2007,241,1885
+South of Market,2004,192,1345
+South of Market,2005,217,1300
+South of Market,2015,219,2166
+South of Market,2014,174,1909
+South of Market,2008,208,1837
+South of Market,2009,215,2226
+South of Market,2011,211,2166
+South of Market,2010,219,2260
+South of Market,2013,226,1991
+South of Market,2012,232,2345
+Inner Richmond,2016,38,369
+Inner Richmond,2017,15,130
+Inner Richmond,2003,35,224
+Inner Richmond,2006,35,178
+Inner Richmond,2007,25,186
+Inner Richmond,2004,35,221
+Inner Richmond,2005,31,208
+Inner Richmond,2015,51,403
+Inner Richmond,2014,30,295
+Inner Richmond,2008,24,186
+Inner Richmond,2009,30,189
+Inner Richmond,2011,25,255
+Inner Richmond,2010,19,222
+Inner Richmond,2013,23,209
+Inner Richmond,2012,29,194
+Potrero Hill,2016,108,632
+Potrero Hill,2017,20,210
+Potrero Hill,2003,107,490
+Potrero Hill,2006,78,387
+Potrero Hill,2007,73,465
+Potrero Hill,2004,115,446
+Potrero Hill,2005,95,454
+Potrero Hill,2015,120,565
+Potrero Hill,2014,55,449
+Potrero Hill,2008,84,449
+Potrero Hill,2009,60,428
+Potrero Hill,2011,78,372
+Potrero Hill,2010,72,462
+Potrero Hill,2013,66,407
+Potrero Hill,2012,81,443
+Treasure Island,2009,5,32
+Treasure Island,2017,2,45
+Treasure Island,2003,5,26
+Treasure Island,2006,2,25
+Treasure Island,2007,7,39
+Treasure Island,2004,5,22
+Treasure Island,2005,9,31
+Treasure Island,2015,19,135
+Treasure Island,2014,16,80
+Treasure Island,2008,6,38
+Treasure Island,2016,21,157
+Treasure Island,2011,3,25
+Treasure Island,2010,3,27
+Treasure Island,2013,7,42
+Treasure Island,2012,6,31
+Pacific Heights,2016,69,835
+Pacific Heights,2017,20,274
+Pacific Heights,2003,74,722
+Pacific Heights,2006,58,586
+Pacific Heights,2007,87,603
+Pacific Heights,2004,87,766
+Pacific Heights,2005,56,701
+Pacific Heights,2015,91,817
+Pacific Heights,2014,80,717
+Pacific Heights,2008,73,558
+Pacific Heights,2009,96,608
+Pacific Heights,2011,72,598
+Pacific Heights,2010,87,613
+Pacific Heights,2013,79,561
+Pacific Heights,2012,89,635
+Hayes Valley,2016,79,729
+Hayes Valley,2017,32,233
+Hayes Valley,2003,92,647
+Hayes Valley,2006,103,481
+Hayes Valley,2007,91,539
+Hayes Valley,2004,96,622
+Hayes Valley,2005,107,600
+Hayes Valley,2015,81,686
+Hayes Valley,2014,68,574
+Hayes Valley,2008,81,565
+Hayes Valley,2009,69,574
+Hayes Valley,2011,84,589
+Hayes Valley,2010,75,578
+Hayes Valley,2013,78,695
+Hayes Valley,2012,81,640
+Excelsior,2016,29,508
+Excelsior,2017,3,138
+Excelsior,2003,37,343
+Excelsior,2006,39,263
+Excelsior,2007,31,280
+Excelsior,2004,49,292
+Excelsior,2005,39,241
+Excelsior,2015,46,464
+Excelsior,2014,36,395
+Excelsior,2008,36,321
+Excelsior,2009,45,283
+Excelsior,2011,28,392
+Excelsior,2010,29,311
+Excelsior,2013,40,343
+Excelsior,2012,35,374
+Visitacion Valley,2016,40,246
+Visitacion Valley,2017,9,100
+Visitacion Valley,2003,32,216
+Visitacion Valley,2006,21,108
+Visitacion Valley,2007,29,154
+Visitacion Valley,2004,31,136
+Visitacion Valley,2005,23,120
+Visitacion Valley,2015,38,209
+Visitacion Valley,2014,40,200
+Visitacion Valley,2008,20,146
+Visitacion Valley,2009,27,146
+Visitacion Valley,2011,29,184
+Visitacion Valley,2010,26,192
+Visitacion Valley,2013,22,158
+Visitacion Valley,2012,18,162
+Mission Bay,2016,78,572
+Mission Bay,2017,20,167
+Mission Bay,2003,35,218
+Mission Bay,2006,48,225
+Mission Bay,2007,44,293
+Mission Bay,2004,42,248
+Mission Bay,2005,29,253
+Mission Bay,2015,65,493
+Mission Bay,2014,38,308
+Mission Bay,2008,47,283
+Mission Bay,2009,59,310
+Mission Bay,2011,50,296
+Mission Bay,2010,57,329
+Mission Bay,2013,32,290
+Mission Bay,2012,45,306
+Castro/Upper Market,2016,92,706
+Castro/Upper Market,2017,35,240
+Castro/Upper Market,2003,94,517
+Castro/Upper Market,2006,80,419
+Castro/Upper Market,2007,91,612
+Castro/Upper Market,2004,91,551
+Castro/Upper Market,2005,81,448
+Castro/Upper Market,2015,118,728
+Castro/Upper Market,2014,101,629
+Castro/Upper Market,2008,100,620
+Castro/Upper Market,2009,68,655
+Castro/Upper Market,2011,116,539
+Castro/Upper Market,2010,83,621
+Castro/Upper Market,2013,81,617
+Castro/Upper Market,2012,98,656
+Sunset/Parkside,2016,131,1085
+Sunset/Parkside,2017,26,410
+Sunset/Parkside,2003,77,497
+Sunset/Parkside,2006,72,448
+Sunset/Parkside,2007,65,450
+Sunset/Parkside,2004,85,412
+Sunset/Parkside,2005,85,424
+Sunset/Parkside,2015,139,1053
+Sunset/Parkside,2014,129,797
+Sunset/Parkside,2008,71,428
+Sunset/Parkside,2009,83,458
+Sunset/Parkside,2011,66,482
+Sunset/Parkside,2010,60,464
+Sunset/Parkside,2013,71,518
+Sunset/Parkside,2012,70,546
+McLaren Park,2016,18,55
+McLaren Park,2017,3,15
+McLaren Park,2003,24,39
+McLaren Park,2006,18,25
+McLaren Park,2007,6,29
+McLaren Park,2004,13,24
+McLaren Park,2005,13,25
+McLaren Park,2015,15,50
+McLaren Park,2014,9,47
+McLaren Park,2008,10,33
+McLaren Park,2009,8,35
+McLaren Park,2011,11,38
+McLaren Park,2010,14,61
+McLaren Park,2013,4,23
+McLaren Park,2012,11,36
+Nob Hill,2016,88,927
+Nob Hill,2017,28,280
+Nob Hill,2003,118,860
+Nob Hill,2006,151,799
+Nob Hill,2007,146,812
+Nob Hill,2004,135,927
+Nob Hill,2005,116,790
+Nob Hill,2015,105,999
+Nob Hill,2014,105,847
+Nob Hill,2008,121,803
+Nob Hill,2009,131,745
+Nob Hill,2011,121,825
+Nob Hill,2010,112,843
+Nob Hill,2013,122,900
+Nob Hill,2012,112,872
+Lakeshore,2016,67,494
+Lakeshore,2017,15,153
+Lakeshore,2003,33,305
+Lakeshore,2006,36,262
+Lakeshore,2007,34,319
+Lakeshore,2004,37,285
+Lakeshore,2005,27,241
+Lakeshore,2015,65,503
+Lakeshore,2014,54,439
+Lakeshore,2008,56,417
+Lakeshore,2009,61,412
+Lakeshore,2011,65,433
+Lakeshore,2010,59,421
+Lakeshore,2013,55,403
+Lakeshore,2012,73,463
+Chinatown,2016,94,866
+Chinatown,2017,25,218
+Chinatown,2003,71,849
+Chinatown,2006,91,597
+Chinatown,2007,78,641
+Chinatown,2004,70,531
+Chinatown,2005,80,507
+Chinatown,2015,78,801
+Chinatown,2014,71,691
+Chinatown,2008,61,489
+Chinatown,2009,64,538
+Chinatown,2011,85,650
+Chinatown,2010,69,585
+Chinatown,2013,102,592
+Chinatown,2012,91,558
+West of Twin Peaks,2016,62,654
+West of Twin Peaks,2017,17,238
+West of Twin Peaks,2003,37,320
+West of Twin Peaks,2006,36,304
+West of Twin Peaks,2007,23,288
+West of Twin Peaks,2004,50,314
+West of Twin Peaks,2005,29,303
+West of Twin Peaks,2015,56,748
+West of Twin Peaks,2014,68,576
+West of Twin Peaks,2008,24,311
+West of Twin Peaks,2009,34,284
+West of Twin Peaks,2011,35,365
+West of Twin Peaks,2010,33,340
+West of Twin Peaks,2013,21,339
+West of Twin Peaks,2012,45,358
+Noe Valley,2016,40,390
+Noe Valley,2017,8,144
+Noe Valley,2003,40,300
+Noe Valley,2006,37,264
+Noe Valley,2007,35,254
+Noe Valley,2004,30,264
+Noe Valley,2005,29,264
+Noe Valley,2015,50,399
+Noe Valley,2014,30,284
+Noe Valley,2008,32,282
+Noe Valley,2009,39,268
+Noe Valley,2011,33,278
+Noe Valley,2010,28,270
+Noe Valley,2013,38,297
+Noe Valley,2012,50,304
+North Beach,2016,58,578
+North Beach,2017,12,203
+North Beach,2003,66,656
+North Beach,2006,61,460
+North Beach,2007,62,465
+North Beach,2004,52,567
+North Beach,2005,56,510
+North Beach,2015,68,625
+North Beach,2014,54,481
+North Beach,2008,57,464
+North Beach,2009,47,450
+North Beach,2011,57,542
+North Beach,2010,51,500
+North Beach,2013,66,499
+North Beach,2012,59,514
+Marina,2016,93,776
+Marina,2017,23,207
+Marina,2003,113,548
+Marina,2006,97,518
+Marina,2007,71,643
+Marina,2004,90,551
+Marina,2005,61,475
+Marina,2015,87,715
+Marina,2014,76,541
+Marina,2008,83,546
+Marina,2009,77,526
+Marina,2011,55,516
+Marina,2010,84,585
+Marina,2013,72,596
+Marina,2012,76,494
+Haight Ashbury,2016,54,398
+Haight Ashbury,2017,14,124
+Haight Ashbury,2003,71,414
+Haight Ashbury,2006,58,288
+Haight Ashbury,2007,62,338
+Haight Ashbury,2004,70,361
+Haight Ashbury,2005,55,340
+Haight Ashbury,2015,61,439
+Haight Ashbury,2014,58,348
+Haight Ashbury,2008,66,338
+Haight Ashbury,2009,69,347
+Haight Ashbury,2011,45,351
+Haight Ashbury,2010,49,325
+Haight Ashbury,2013,47,377
+Haight Ashbury,2012,33,379
+Lincoln Park,2016,3,25
+Lincoln Park,2017,0,11
+Lincoln Park,2003,7,57
+Lincoln Park,2006,4,21
+Lincoln Park,2007,5,23
+Lincoln Park,2004,4,63
+Lincoln Park,2005,5,36
+Lincoln Park,2015,4,33
+Lincoln Park,2014,5,30
+Lincoln Park,2008,6,29
+Lincoln Park,2009,2,22
+Lincoln Park,2011,1,18
+Lincoln Park,2010,2,26
+Lincoln Park,2013,1,31
+Lincoln Park,2012,1,34
+Bayview Hunters Point,2016,352,1276
+Bayview Hunters Point,2017,82,424
+Bayview Hunters Point,2003,223,850
+Bayview Hunters Point,2006,221,652
+Bayview Hunters Point,2007,242,732
+Bayview Hunters Point,2004,216,747
+Bayview Hunters Point,2005,215,680
+Bayview Hunters Point,2015,269,1214
+Bayview Hunters Point,2014,198,981
+Bayview Hunters Point,2008,216,789
+Bayview Hunters Point,2009,220,722
+Bayview Hunters Point,2011,142,714
+Bayview Hunters Point,2010,158,818
+Bayview Hunters Point,2013,141,817
+Bayview Hunters Point,2012,159,758
+Seacliff,2016,10,52
+Seacliff,2017,1,20
+Seacliff,2003,2,25
+Seacliff,2006,0,30
+Seacliff,2007,2,31
+Seacliff,2004,2,12
+Seacliff,2005,2,21
+Seacliff,2015,3,48
+Seacliff,2014,1,45
+Seacliff,2008,5,23
+Seacliff,2009,1,23
+Seacliff,2011,1,24
+Seacliff,2010,2,29
+Seacliff,2013,2,23
+Seacliff,2012,2,29
+Lone Mountain/USF,2016,37,347
+Lone Mountain/USF,2017,17,133
+Lone Mountain/USF,2003,39,325
+Lone Mountain/USF,2006,47,223
+Lone Mountain/USF,2007,36,257
+Lone Mountain/USF,2004,49,281
+Lone Mountain/USF,2005,45,270
+Lone Mountain/USF,2015,57,361
+Lone Mountain/USF,2014,51,279
+Lone Mountain/USF,2008,40,267
+Lone Mountain/USF,2009,35,268
+Lone Mountain/USF,2011,26,260
+Lone Mountain/USF,2010,28,250
+Lone Mountain/USF,2013,30,281
+Lone Mountain/USF,2012,24,261
+Presidio,2016,18,235
+Presidio,2017,5,78
+Presidio,2003,2,12
+Presidio,2006,1,23
+Presidio,2007,0,41
+Presidio,2004,2,9
+Presidio,2005,3,19
+Presidio,2015,19,240
+Presidio,2014,22,225
+Presidio,2008,1,23
+Presidio,2009,2,30
+Presidio,2011,12,111
+Presidio,2010,7,70
+Presidio,2013,11,171
+Presidio,2012,20,151
+Mission,2016,396,2242
+Mission,2017,117,668
+Mission,2003,326,2341
+Mission,2006,255,1862
+Mission,2007,226,2053
+Mission,2004,337,1815
+Mission,2005,222,1763
+Mission,2015,361,2202
+Mission,2014,248,1777
+Mission,2008,242,1891
+Mission,2009,222,1926
+Mission,2011,263,2442
+Mission,2010,244,2189
+Mission,2013,279,2030
+Mission,2012,286,2303
+Tenderloin,2016,333,2408
+Tenderloin,2017,82,901
+Tenderloin,2003,293,1999
+Tenderloin,2006,315,1844
+Tenderloin,2007,269,2253
+Tenderloin,2004,321,1851
+Tenderloin,2005,329,1891
+Tenderloin,2015,288,2667
+Tenderloin,2014,232,2306
+Tenderloin,2008,237,2239
+Tenderloin,2009,225,2169
+Tenderloin,2011,258,2581
+Tenderloin,2010,255,2400
+Tenderloin,2013,245,2644
+Tenderloin,2012,259,2664
+Russian Hill,2016,69,520
+Russian Hill,2017,14,157
+Russian Hill,2003,53,582
+Russian Hill,2006,49,397
+Russian Hill,2007,60,404
+Russian Hill,2004,55,440
+Russian Hill,2005,48,376
+Russian Hill,2015,62,546
+Russian Hill,2014,47,402
+Russian Hill,2008,69,434
+Russian Hill,2009,51,411
+Russian Hill,2011,56,419
+Russian Hill,2010,50,456
+Russian Hill,2013,76,347
+Russian Hill,2012,63,403
+Outer Mission,2016,37,451
+Outer Mission,2017,10,119
+Outer Mission,2003,21,225
+Outer Mission,2006,28,247
+Outer Mission,2007,31,387
+Outer Mission,2004,36,222
+Outer Mission,2005,35,249
+Outer Mission,2015,48,381
+Outer Mission,2014,43,389
+Outer Mission,2008,25,336
+Outer Mission,2009,34,422
+Outer Mission,2011,37,365
+Outer Mission,2010,22,347
+Outer Mission,2013,32,288
+Outer Mission,2012,29,343
+Twin Peaks,2016,16,162
+Twin Peaks,2017,4,68
+Twin Peaks,2003,13,123
+Twin Peaks,2006,13,108
+Twin Peaks,2007,19,111
+Twin Peaks,2004,15,84
+Twin Peaks,2005,15,99
+Twin Peaks,2015,23,163
+Twin Peaks,2014,19,100
+Twin Peaks,2008,12,119
+Twin Peaks,2009,12,91
+Twin Peaks,2011,16,126
+Twin Peaks,2010,20,91
+Twin Peaks,2013,12,115
+Twin Peaks,2012,15,116

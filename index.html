@@ -1,8 +1,176 @@
-<HTML>
-  <HEAD>
-    <TITLE>Hello World in HTML</TITLE>
-  </HEAD>
-  <BODY>
-    <CENTER><H1>Hello World!</H1></CENTER>
-  </BODY>
-</HTML>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>D3 Page Template</title>
+    <script type="text/javascript" src="d3/d3.v3.js"></script>
+    <style type="text/css">
+      .axis path,
+      .axis line {
+          fill: none;
+          stroke: black;
+          shape-rendering: crispEdges;
+      }
+      .axis text {
+          font-family: sans-serif;
+          font-size: 11px;
+      }
+		</style>
+  </head>
+  <body>
+    <h1>Social Data Analysis and Visualisation 2017</h1>
+    <h2>Project B</h2>
+
+    <script type="text/javascript">
+    var w = 1024;
+		var h = 768;
+		var padding = 100;
+
+    var svg = d3.select("body")
+    .append("svg")
+    .attr("width", w)
+    .attr("height", h);
+
+    var xScale;
+    var yScale;
+    var rScale;
+
+    var dicts = {};
+    var datasets = {};
+    var fireIncidentsKey = 'Fire Incidents';
+    var otherIncidentsKey = 'Other Incidents';
+
+    d3.csv("situationsByDistrict.csv", function(data) {
+      //console.log(data);
+
+      //load data
+      for (i in data) {
+        if(i == 0 || i % 2 == 0) { continue; }
+        var district = data[i]['Neighborhood  District'];
+        console.log(district);
+        if (district == 'No District Specified') { continue; }
+        //console.log(district);
+        if(!dicts[district]) { dicts[district] = {}; }
+        var year = parseInt(data[i]['Year']);
+        if(!dicts[district][year]) { 
+          dicts[district][year] = {};
+          //dicts[district][year]['Fire Incidents'] = 0; 
+          //dicts[district][year]['Other Incidents'] = 0; 
+        }
+
+        var fireIncidents = parseInt(data[i][fireIncidentsKey]);
+        var otherIncidents = parseInt(data[i][otherIncidentsKey]);
+        dicts[district][year][fireIncidentsKey] = fireIncidents;
+        dicts[district][year][otherIncidentsKey] = otherIncidents;
+      }
+
+      //restructure data into separate arrays per year
+      for (district in dicts) {
+        for (year in dicts[district]) {
+          if(!datasets[year]) { datasets[year] = []; }
+          newEntry = [];
+          newEntry.push(dicts[district][year][fireIncidentsKey]);
+          newEntry.push(dicts[district][year][otherIncidentsKey]);
+          newEntry.push(district);
+          datasets[year].push(newEntry);
+        }
+      }
+
+      dataset = datasets[2003];
+      console.log(dataset);
+
+      //FIND scale input domain
+      largestX = -1;
+      largestY = -1;
+      largestTotal = -1;
+      for (year in datasets) {
+        for (i in datasets[year]) {
+          if(datasets[year][i][0] > largestX) { largestX = datasets[year][i][0]; }
+          if(datasets[year][i][1] > largestY) { largestY = datasets[year][i][1]; }
+          if(datasets[year][i][0] + datasets[year][i][1] > largestTotal) { largestTotal =  datasets[year][i][0] + datasets[year][i][1]; }
+        }
+      }
+
+      //SET scales
+      xScale = d3.scale.linear()
+      .domain([0, largestX])
+      .range([padding, w - padding * 2]);
+      yScale = d3.scale.linear()
+      .domain([0, largestY])
+      .range([h - padding, padding]);
+      rScale = d3.scale.linear()
+      .domain([0, largestTotal])
+      .range([2, 10]);
+
+      viewIncidents(2003);
+
+      //Define X axis 
+      var xAxis = d3.svg.axis() .scale(xScale) .orient("bottom");
+      //Define Y axis
+      var yAxis = d3.svg.axis() .scale(yScale) .orient("left");
+      //Create X axis
+      svg.append("g") .attr("class", "axis") .attr("transform", "translate(0," + (h - padding) + ")") .call(xAxis);
+      //Create Y axis
+      svg.append("g") .attr("class", "axis") .attr("transform", "translate(" + padding + ",0)") .call(yAxis);
+
+      //Add x-axis label
+      svg.append("text")
+      .attr("x", w/2 )
+      .attr("y", h - padding/2 )
+      .style("text-anchor", "middle")
+      .text("Fire Incidents");
+                     
+      //Add y-axis label
+      svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 + 20)
+      .attr("x",0 - (h / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Other Incidents");
+    });
+
+    function viewIncidents(year) {
+      svg.selectAll('circle').remove(); //remove previous district circles, if any
+      //Add the district circles
+      circles = svg.selectAll("circle") 
+      .data(datasets[year]) .enter() 
+      .append("circle");
+
+      svg.selectAll("circle")
+      .data(datasets[year])
+      .transition()
+      .duration(1000)
+      .attr("cx", function(d) { return xScale(d[0]); }) 
+      .attr("cy", function(d) { return yScale(d[1]); }) 
+      .attr("r", function(d) { return rScale(d[0] + d[1]); })
+
+      svg.selectAll('text').remove(); //remove previous district names, if any
+      //Add district names
+      svg.selectAll("text")
+      .data(datasets[year]) .enter() 
+      .append("text") 
+      
+      svg.selectAll("text")
+      .data(datasets[year])
+      .transition()
+      .duration(1000)
+      .text(function(d) { return d[2]; }) 
+      .attr("x", function(d) { return xScale(d[0]) + 8; }) 
+      .attr("y", function(d) { return yScale(d[1]); }) 
+      .attr("font-family", "sans-serif") 
+      .attr("font-size", "8px") 
+      .attr("fill", "red");
+
+      //Add plot title
+      svg.append("text")
+      .attr("x", (w / 2))             
+      .attr("y", 0 + padding)
+      .attr("text-anchor", "middle")  
+      .style("font-size", "32px") 
+      .style("text-decoration", "underline")  
+      .text("SF fire and other incidents");
+    }
+    </script>
+  </body>
+</html>
