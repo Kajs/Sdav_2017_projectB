@@ -40,6 +40,8 @@
     var fireIncidentsKey = 'Fire Incidents';
     var otherIncidentsKey = 'Other Incidents';
 
+    var currentYear = 2003;
+
     d3.csv("situationsByDistrict.csv", function(data) {
       //console.log(data);
 
@@ -48,7 +50,7 @@
         if(i == 0 || i % 2 == 0) { continue; }
         var district = data[i]['Neighborhood  District'];
         console.log(district);
-        if (district == 'No District Specified') { continue; }
+        //if (district == 'No District Specified') { continue; }
         //console.log(district);
         if(!dicts[district]) { dicts[district] = {}; }
         var year = parseInt(data[i]['Year']);
@@ -103,31 +105,6 @@
       .range([2, 10]);
 
       viewIncidents(2003);
-
-      //Define X axis 
-      var xAxis = d3.svg.axis() .scale(xScale) .orient("bottom");
-      //Define Y axis
-      var yAxis = d3.svg.axis() .scale(yScale) .orient("left");
-      //Create X axis
-      svg.append("g") .attr("class", "axis") .attr("transform", "translate(0," + (h - padding) + ")") .call(xAxis);
-      //Create Y axis
-      svg.append("g") .attr("class", "axis") .attr("transform", "translate(" + padding + ",0)") .call(yAxis);
-
-      //Add x-axis label
-      svg.append("text")
-      .attr("x", w/2 )
-      .attr("y", h - padding/2 )
-      .style("text-anchor", "middle")
-      .text("Fire Incidents");
-                     
-      //Add y-axis label
-      svg.append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 0 + 20)
-      .attr("x",0 - (h / 2))
-      .attr("dy", "1em")
-      .style("text-anchor", "middle")
-      .text("Other Incidents");
     });
 
     function viewIncidents(year) {
@@ -169,8 +146,54 @@
       .attr("text-anchor", "middle")  
       .style("font-size", "32px") 
       .style("text-decoration", "underline")  
-      .text("SF fire and other incidents");
+      .text("SF fire and other incidents ".concat(year.toString()));
+
+      //Add x-axis label
+      svg.append("text")
+      .attr("x", w/2 )
+      .attr("y", h - padding/2 )
+      .style("text-anchor", "middle")
+      .text("Fire Incidents");
+                     
+      //Add y-axis label
+      svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 + 20)
+      .attr("x",0 - (h / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Other Incidents");
+
+      //Define X axis 
+      var xAxis = d3.svg.axis() .scale(xScale) .orient("bottom");
+      //Define Y axis
+      var yAxis = d3.svg.axis() .scale(yScale) .orient("left");
+      //Create X axis
+      svg.append("g") .attr("class", "axis") .attr("transform", "translate(0," + (h - padding) + ")") .call(xAxis);
+      //Create Y axis
+      svg.append("g") .attr("class", "axis") .attr("transform", "translate(" + padding + ",0)") .call(yAxis);
+    }
+
+    function increaseYear() {
+      if (currentYear < 2017) {
+        currentYear = currentYear + 1;
+        viewIncidents(currentYear)
+      }
+    }
+    function decreaseYear() {
+      if (currentYear > 2003) {
+        currentYear = currentYear - 1;
+        viewIncidents(currentYear)
+      }
     }
     </script>
+    <p>
+    <input type="button" value="Decrease Year" 
+    style="position:relative; left: 5%; top: 20%; height:50px;width:110px"
+    onclick="decreaseYear()">
+    <input type="button" value="Increase Year" 
+    style="position:relative; left: 5%; top: 20%; height:50px;width:110px"
+    onclick="increaseYear()">
+    </p>
   </body>
 </html>
