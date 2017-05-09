@@ -368,12 +368,12 @@
 
           //Add plot title
           svg2.append("text")
-          .attr("x", (width / 2))             
+          .attr("x", (width / 2.35))             
           .attr("y", 50)
           .attr("text-anchor", "middle")  
           .style("font-size", "32px") 
           .style("text-decoration", "underline")  
-          .text("k" + K + " " + incidentType + " Incidents in " + currentYear.toString());
+          .text(incidentType + " incidents for " + "k=" + K + " in " + currentYear.toString());
         }
 
         function kmeans(K) {
