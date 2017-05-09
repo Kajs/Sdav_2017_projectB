@@ -197,12 +197,14 @@
     </div>
   
     <h2> Visualising Geodata </h2>
+    <p>Please allow a moment for the calculations to complete (should be less than 10 seconds).</p>
 
     <div id="kmeansPlot">
       <script type="text/javascript">
         var w2 = 800;
         var h2 = 600;
         var incidentType = 'Fire';
+        var currentYear = 2003;
         var currentK = 2;
 
         d3.select("#kmeansPlot")
@@ -217,6 +219,24 @@
         .attr("style", "position:relative; left: 8%; top: 0%; height:50px;width:110px")
         .attr("onclick", "increaseK()");
 
+        d3.select("#kmeansPlot")
+        .append("button")
+        .text("Decrease Year")
+        .attr("style", "position:relative; left: 10%; top: 0%; height:50px;width:110px")
+        .attr("onclick", "decreaseYear()");
+
+        d3.select("#kmeansPlot")
+        .append("button")
+        .text("Increase Year")
+        .attr("style", "position:relative; left: 10%; top: 0%; height:50px;width:110px")
+        .attr("onclick", "increaseYear()");
+
+        d3.select("#kmeansPlot")
+        .append("button")
+        .text("Toggle Incident Type")
+        .attr("style", "position:relative; left: 12%; top: 0%; height:50px;width:140px")
+        .attr("onclick", "toggleIncidentType()");
+
         var districtCentresDictionary = {};
         //districtCentresDictionary['Fire'] = {};
         //districtCentresDictionary['Other'] = {};
@@ -224,8 +244,8 @@
         //districtCentresDataset['Fire'] = [];
         //districtCentresDataset['Other'] = [];
         var geoDataset = {};
-        geoDataset['Fire'] = [];
-        geoDataset['Other'] = [];
+        geoDataset['Fire'] = {};
+        geoDataset['Other'] = {};
 
         var svg2 = d3.select("body")
         .append("svg")
@@ -261,6 +281,8 @@
             var X = parseFloat(geoPoints[i]['X']);
             var Y = parseFloat(geoPoints[i]['Y']);
             var incident = geoPoints[i]['Incident Type'];
+            var year = geoPoints[i]['Year'];
+            if (!geoDataset[incident][year]) { geoDataset[incident][year] = []; }
 
             if(X < -124 || x > -120 || y < 35 || y > 39) { continue; }
 
@@ -275,7 +297,7 @@
             districtCentresDictionary[district]['Y'] += Y;
             districtCentresDictionary[district]['Length'] += 1.0;
 
-            geoDataset[incident].push([X, Y, 0]);
+            geoDataset[incident][year].push([X, Y, 0]);
           }
 
           //Calculate district centres
@@ -296,7 +318,7 @@
           //Add the incident circles
           svg2.selectAll("circle").remove();
           svg2.selectAll("circle") 
-          .data(geoDataset[incidentType]) .enter() 
+          .data(geoDataset[incidentType][currentYear]) .enter() 
           .append("circle"); 
 
           svg2.selectAll('ellipse').remove(); //remove previous k centres, if any
@@ -321,7 +343,7 @@
           .attr("stroke-width", 2);
 
           svg2.selectAll("circle")
-          .data(geoDataset[incidentType])
+          .data(geoDataset[incidentType][currentYear])
           .transition()
           .duration(500)
           .attr("cx", function(d) { return projection([d[0], d[1]])[0]; }) 
@@ -351,32 +373,32 @@
           .attr("text-anchor", "middle")  
           .style("font-size", "32px") 
           .style("text-decoration", "underline")  
-          .text("Showing k" + K + " " + incidentType + " Incidents");
+          .text("k" + K + " " + incidentType + " Incidents in " + currentYear.toString());
         }
 
         function kmeans(K) {
           var centres = [];
           while(centres.length < K) {
-              var c = Math.floor((Math.random() * geoDataset[incidentType].length)); 
+              var c = Math.floor((Math.random() * geoDataset[incidentType][currentYear].length)); 
               var duplicate = false; 
               for(j in centres) { 
-                  if (centres[j][0] == geoDataset[incidentType][c][0] && 
-                  centres[j][1] == geoDataset[incidentType][c][1]) { 
+                  if (centres[j][0] == geoDataset[incidentType][currentYear][c][0] && 
+                  centres[j][1] == geoDataset[incidentType][currentYear][c][1]) { 
                       duplicate = true; 
                   } 
               }
               if(duplicate != true) { 
-                  centres.push([geoDataset[incidentType][c][0], geoDataset[incidentType][c][1], c]); 
+                  centres.push([geoDataset[incidentType][currentYear][c][0], geoDataset[incidentType][currentYear][c][1], c]); 
               }
           }
           assignPointsToCentres(centres);
               
           for(i = 0; i < 3; i++) {            
               for (c in centres) { centres[c] = [0.0, 0.0, 0.0]; }
-              for (d in geoDataset[incidentType]) {
-                  var pos = parseInt(geoDataset[incidentType][d][2]);
-                  centres[pos][0] += parseFloat(geoDataset[incidentType][d][0]);
-                  centres[pos][1] += parseFloat(geoDataset[incidentType][d][1]);
+              for (d in geoDataset[incidentType][currentYear]) {
+                  var pos = parseInt(geoDataset[incidentType][currentYear][d][2]);
+                  centres[pos][0] += parseFloat(geoDataset[incidentType][currentYear][d][0]);
+                  centres[pos][1] += parseFloat(geoDataset[incidentType][currentYear][d][1]);
                   centres[pos][2] += 1.0;
               }      
               for (c in centres) { 
@@ -390,21 +412,21 @@
         }
 
         function assignPointsToCentres(centres) {
-          for (d in geoDataset[incidentType]) {
+          for (d in geoDataset[incidentType][currentYear]) {
               var smallest_pos = -1;
               var smallest_val = Number.MAX_VALUE;
               for (c in centres) {
                   var lat1 = centres[c][1];
                   var lon1 = centres[c][0];
-                  var lat2 = geoDataset[incidentType][d][1];
-                  var lon2 = geoDataset[incidentType][d][0];
+                  var lat2 = geoDataset[incidentType][currentYear][d][1];
+                  var lon2 = geoDataset[incidentType][currentYear][d][0];
                   var dist = getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2);
                   if(dist <= smallest_val) {
                       smallest_pos = c;
                       smallest_val = dist;
                   }
               }
-              geoDataset[incidentType][d][2] = smallest_pos;
+              geoDataset[incidentType][currentYear][d][2] = smallest_pos;
           }
         }
 
@@ -438,14 +460,33 @@
         function increaseK() {
           if (currentK < 6) {
             currentK += 1;
-            viewK(currentK)
+            viewK(currentK);
           }
         }
         function decreaseK() {
           if (currentK > 2) {
-            currentYear -= 1;
-            viewK(currentK)
+            currentK -= 1;
+            viewK(currentK);
           }
+        }
+
+        function increaseYear() {
+          if (currentYear < 2017) {
+            currentYear += 1;
+            viewK(currentK);
+          }
+        }
+        function decreaseYear() {
+          if (currentYear > 2003) {
+            currentYear -= 1;
+            viewK(currentK);
+          }
+        }
+
+        function toggleIncidentType() {
+          if (incidentType == "Fire") { incidentType = "Other"; }
+          else { incidentType = "Fire"; }
+          viewK(currentK);
         }
       </script>
     </div>
