@@ -114,13 +114,13 @@
           .append("button")
           .text("Decrease Year")
           .attr("style", "position:relative; left: 8%; top: 0%; height:50px;width:110px")
-          .attr("onclick", "decreaseYear()");
+          .attr("onclick", "decreaseGraphPlotYear()");
 
           d3.select("#incidentPlot")
           .append("button")
           .text("Increase Year")
           .attr("style", "position:relative; left: 8%; top: 0%; height:50px;width:110px")
-          .attr("onclick", "increaseYear()");
+          .attr("onclick", "increaseGraphPlotYear()");
         });
 
         function viewIncidents(year) {
@@ -190,13 +190,13 @@
           svg.append("g") .attr("class", "axis") .attr("transform", "translate(" + padding + ",0)") .call(yAxis);
         }
 
-        function increaseYear() {
+        function increaseGraphPlotYear() {
           if (currentYear < 2017) {
             currentYear = currentYear + 1;
             viewIncidents(currentYear)
           }
         }
-        function decreaseYear() {
+        function decreaseGraphPlotYear() {
           if (currentYear > 2003) {
             currentYear = currentYear - 1;
             viewIncidents(currentYear)
@@ -245,13 +245,13 @@
         .append("button")
         .text("Decrease Year")
         .attr("style", "position:relative; left: 10%; top: 0%; height:50px;width:110px")
-        .attr("onclick", "decreaseYear()");
+        .attr("onclick", "decreaseKmeansPlotYear()");
 
         d3.select("#kmeansPlot")
         .append("button")
         .text("Increase Year")
         .attr("style", "position:relative; left: 10%; top: 0%; height:50px;width:110px")
-        .attr("onclick", "increaseYear()");
+        .attr("onclick", "increaseKmeansPlotYear()");
 
         d3.select("#kmeansPlot")
         .append("button")
@@ -492,13 +492,13 @@
           }
         }
 
-        function increaseYear() {
+        function increaseKmeansPlotYear() {
           if (currentYear < 2017) {
             currentYear += 1;
             viewK(currentK);
           }
         }
-        function decreaseYear() {
+        function decreaseKmeansPlotYear() {
           if (currentYear > 2003) {
             currentYear -= 1;
             viewK(currentK);
