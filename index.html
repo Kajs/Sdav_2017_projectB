@@ -51,7 +51,7 @@
         var fireIncidentsKey = 'Fire Incidents';
         var otherIncidentsKey = 'Other Incidents';
 
-        var currentYear = 2003;
+        var currentYearGraphPlot = 2003;
 
         d3.csv("situationsByDistrict.csv", function(data) {
           //load data
@@ -191,15 +191,15 @@
         }
 
         function increaseGraphPlotYear() {
-          if (currentYear < 2017) {
-            currentYear = currentYear + 1;
-            viewIncidents(currentYear);
+          if (currentYearGraphPlot < 2017) {
+            currentYearGraphPlot = currentYearGraphPlot + 1;
+            viewIncidents(currentYearGraphPlot);
           }
         }
         function decreaseGraphPlotYear() {
-          if (currentYear > 2003) {
-            currentYear = currentYear - 1;
-            viewIncidents(currentYear);
+          if (currentYearGraphPlot > 2003) {
+            currentYearGraphPlot = currentYearGraphPlot - 1;
+            viewIncidents(currentYearGraphPlot);
           }
         }
       </script>
@@ -226,7 +226,7 @@
         var w2 = 800;
         var h2 = 600;
         var incidentType = 'Fire';
-        var currentYear = 2003;
+        var currentYearKmeansPlot = 2003;
         var currentK = 2;
 
         d3.select("#kmeansPlot")
@@ -340,7 +340,7 @@
           //Add the incident circles
           svg2.selectAll("circle").remove();
           svg2.selectAll("circle") 
-          .data(geoDataset[incidentType][currentYear]) .enter() 
+          .data(geoDataset[incidentType][currentYearKmeansPlot]) .enter() 
           .append("circle"); 
 
           svg2.selectAll('ellipse').remove(); //remove previous k centres, if any
@@ -365,7 +365,7 @@
           .attr("stroke-width", 2);
 
           svg2.selectAll("circle")
-          .data(geoDataset[incidentType][currentYear])
+          .data(geoDataset[incidentType][currentYearKmeansPlot])
           .transition()
           .duration(500)
           .attr("cx", function(d) { return projection([d[0], d[1]])[0]; }) 
@@ -395,32 +395,32 @@
           .attr("text-anchor", "middle")  
           .style("font-size", "32px") 
           .style("text-decoration", "underline")  
-          .text(incidentType + " incidents for " + "k=" + K + " in " + currentYear.toString());
+          .text(incidentType + " incidents for " + "k=" + K + " in " + currentYearKmeansPlot.toString());
         }
 
         function kmeans(K) {
           var centres = [];
           while(centres.length < K) {
-              var c = Math.floor((Math.random() * geoDataset[incidentType][currentYear].length)); 
+              var c = Math.floor((Math.random() * geoDataset[incidentType][currentYearKmeansPlot].length)); 
               var duplicate = false; 
               for(j in centres) { 
-                  if (centres[j][0] == geoDataset[incidentType][currentYear][c][0] && 
-                  centres[j][1] == geoDataset[incidentType][currentYear][c][1]) { 
+                  if (centres[j][0] == geoDataset[incidentType][currentYearKmeansPlot][c][0] && 
+                  centres[j][1] == geoDataset[incidentType][currentYearKmeansPlot][c][1]) { 
                       duplicate = true; 
                   } 
               }
               if(duplicate != true) { 
-                  centres.push([geoDataset[incidentType][currentYear][c][0], geoDataset[incidentType][currentYear][c][1], c]); 
+                  centres.push([geoDataset[incidentType][currentYearKmeansPlot][c][0], geoDataset[incidentType][currentYearKmeansPlot][c][1], c]); 
               }
           }
           assignPointsToCentres(centres);
               
           for(i = 0; i < 3; i++) {            
               for (c in centres) { centres[c] = [0.0, 0.0, 0.0]; }
-              for (d in geoDataset[incidentType][currentYear]) {
-                  var pos = parseInt(geoDataset[incidentType][currentYear][d][2]);
-                  centres[pos][0] += parseFloat(geoDataset[incidentType][currentYear][d][0]);
-                  centres[pos][1] += parseFloat(geoDataset[incidentType][currentYear][d][1]);
+              for (d in geoDataset[incidentType][currentYearKmeansPlot]) {
+                  var pos = parseInt(geoDataset[incidentType][currentYearKmeansPlot][d][2]);
+                  centres[pos][0] += parseFloat(geoDataset[incidentType][currentYearKmeansPlot][d][0]);
+                  centres[pos][1] += parseFloat(geoDataset[incidentType][currentYearKmeansPlot][d][1]);
                   centres[pos][2] += 1.0;
               }      
               for (c in centres) { 
@@ -434,21 +434,21 @@
         }
 
         function assignPointsToCentres(centres) {
-          for (d in geoDataset[incidentType][currentYear]) {
+          for (d in geoDataset[incidentType][currentYearKmeansPlot]) {
               var smallest_pos = -1;
               var smallest_val = Number.MAX_VALUE;
               for (c in centres) {
                   var lat1 = centres[c][1];
                   var lon1 = centres[c][0];
-                  var lat2 = geoDataset[incidentType][currentYear][d][1];
-                  var lon2 = geoDataset[incidentType][currentYear][d][0];
+                  var lat2 = geoDataset[incidentType][currentYearKmeansPlot][d][1];
+                  var lon2 = geoDataset[incidentType][currentYearKmeansPlot][d][0];
                   var dist = getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2);
                   if(dist <= smallest_val) {
                       smallest_pos = c;
                       smallest_val = dist;
                   }
               }
-              geoDataset[incidentType][currentYear][d][2] = smallest_pos;
+              geoDataset[incidentType][currentYearKmeansPlot][d][2] = smallest_pos;
           }
         }
 
@@ -493,14 +493,14 @@
         }
 
         function increaseKmeansPlotYear() {
-          if (currentYear < 2017) {
-            currentYear += 1;
+          if (currentYearKmeansPlot < 2017) {
+            currentYearKmeansPlot += 1;
             viewK(currentK);
           }
         }
         function decreaseKmeansPlotYear() {
-          if (currentYear > 2003) {
-            currentYear -= 1;
+          if (currentYearKmeansPlot > 2003) {
+            currentYearKmeansPlot -= 1;
             viewK(currentK);
           }
         }
